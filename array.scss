@@ -1,0 +1,50 @@
+@function em($target, $context: $base__font-size) {
+    @return calc($target / $context) * 1em;
+}
+
+@mixin small {
+    @media screen and (min-width: 576px) {
+        @content;
+    }
+}
+
+@mixin medium {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin large {
+    @media screen and (min-width: 992px) {
+        @content;
+    }
+}
+
+@mixin x-large {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}
+
+
+$base__font-size: 16px;
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body{
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: .4px;
+}
+
+
+.container{
+    min-height: 100vh;
+    position: relative;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
