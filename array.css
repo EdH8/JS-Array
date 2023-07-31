@@ -50,6 +50,7 @@ body {
 
 .saved_img {
   padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .img-btn,
@@ -77,5 +78,17 @@ form {
   padding: 10px 15px;
   border-radius: 5px;
   background-color: #1b1b1b;
+  color: white;
+}
+
+#imageGallery {
+  padding: 0 20px;
+}
+
+#imageGallery img {
+  padding: 0 20px 20px 20px;
+}
+
+.saved_img h3 {
   color: white;
 }/*# sourceMappingURL=array.css.map */
