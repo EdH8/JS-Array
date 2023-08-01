@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body{
+    height: 100%;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: .4px;
+    background-color: $Darkest_Night;
+}
+
+
+.container{
+    min-height: 100vh;
+    position: relative;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    margin: 20px 20px 0 20px;
+}

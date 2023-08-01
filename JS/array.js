@@ -39,23 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-
-  // function updateImageLibrary() {
-  //   const galleryContainer = document.getElementById("imageGallery");
-
-  //   galleryContainer.innerHTML = "";
-
-  //   submittedImages.forEach((imageUrl) => {
-  //     const imageElement = document.createElement("img");
-  //     imageElement.src = imageUrl;
-  //     imageElement.alt = "Submitted Image";
-  //     galleryContainer.appendChild(imageElement);
-  //   });
-  // }
-
   function updateImageLibrary() {
     const galleryContainer = document.getElementById("imageGallery");
-    galleryContainer.innerHTML = ""; // Clear the container
+    galleryContainer.innerHTML = "";
   
     // Group images by email
     const imagesByUser = {};
@@ -104,13 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
     inputControl.classList.remove("error");
   }
 
-  // function saveSubmittedImage() {
-  //   const picsumImg = document.getElementById("picsum_img");
-  //   const imageUrl = picsumImg.src;
-  //   submittedImages.push(imageUrl);
-  //   updateImageLibrary();
-  // }
-
   function saveSubmittedImage() {
     const picsumImg = document.getElementById("picsum_img");
     const imageUrl = picsumImg.src;
@@ -118,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
     submittedImages.push({ imageUrl, email: emailValue });
   
-    // Add email property to the image group for later display
+    // Add email property to the image group
     const imageGroup = submittedImages.filter((imageObj) => imageObj.email === emailValue);
     imageGroup.email = emailValue;
   

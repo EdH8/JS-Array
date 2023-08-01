@@ -1,0 +1,77 @@
+.error{
+    color: red;
+}
+
+
+.containing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.image{
+    display: flex;
+    justify-content: center;
+}
+
+.emailPic_container h2,
+.form_header h2{
+    color: white;
+}
+
+
+.random_picture,
+.saved_img{
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+}
+
+.saved_img{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.img-btn,
+.randomImg_header,
+.image-gallery-container{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+form{
+    text-align: center;
+}
+
+.input_fields input{
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.image{
+    margin: 10px 0 20px 0;
+}
+
+.container button{
+    text-decoration: none;
+    padding: 10px 15px; 
+    border-radius: 5px;
+    background-color: $Eerie_Black;
+    color: white;
+}
+
+#imageGallery{
+    padding: 0 20px;
+}
+
+#imageGallery img{
+    padding: 0 20px 20px 20px;
+}
+
+.saved_img h3{
+    color: white;
+}
