@@ -8,15 +8,12 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   letter-spacing: 0.4px;
-  background-color: #0A0A0B;
+  background-color: #000000;
 }
 
 .container {
   min-height: 100vh;
   position: relative;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  margin: 20px 20px 0 20px;
 }
 
 .error {
@@ -45,7 +42,7 @@ body {
   padding-bottom: 20px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 5px 5px rgba(255, 255, 255, 0.3);
 }
 
 .saved_img {
@@ -91,4 +88,30 @@ form {
 
 .saved_img h3 {
   color: white;
+}
+
+#picsum_img {
+  margin: 0 60px;
+}
+
+button:hover {
+  background-color: rgba(109, 109, 109, 0.1);
+}
+
+.background_container {
+  background-image: url("Images/pict.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+}
+
+.saved_img,
+.random_picture {
+  background-color: #0A0A0B;
+  margin: 50px 20px;
+}
+
+.error {
+  margin: 10px 10px 0 10px;
 }/*# sourceMappingURL=array.css.map */

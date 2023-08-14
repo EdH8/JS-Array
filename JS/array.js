@@ -1,11 +1,9 @@
-//FORM VALIDATION
-
-// array.js
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("GET_PIC");
   const email = document.getElementById("email");
   const placeholderImage = document.getElementById("picsum_img");
-  const submitButton = document.getElementById("change_img");
+  const submitButton = document.getElementById("submit_btn");
+  const nextImageButton = document.getElementById("change_img");
 
   const submittedImages = [];
 
@@ -16,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   form.addEventListener('submit', e => {
     e.preventDefault();
-    
+
     validateInputs();
   });
 
@@ -27,32 +25,35 @@ document.addEventListener("DOMContentLoaded", function () {
       setError(email, "Email is required");
     } else if (!isValidEmail(emailValue)) {
       setError(email, "Provide a valid email address");
+    } else if (isImageAlreadySaved(emailValue, placeholderImage.src)) {
+      setError(email, "You've already saved this image to this email!");
     } else {
       setSuccess(email);
 
       saveSubmittedImage();
 
-      const imageUrl = placeholderImage.src;
-      placeholderImage.src = `https://picsum.photos/200/300?random=${Math.random()}`;
-
       updateImageLibrary();
     }
+  }
+
+  function isImageAlreadySaved(email, imageUrl) {
+    return submittedImages.some(image => image.email === email && image.imageUrl === imageUrl);
   }
 
   function updateImageLibrary() {
     const galleryContainer = document.getElementById("imageGallery");
     galleryContainer.innerHTML = "";
-  
+
     // Group images by email
     const imagesByUser = {};
-  
+
     submittedImages.forEach((imageObj) => {
       if (!imagesByUser[imageObj.email]) {
         imagesByUser[imageObj.email] = [];
       }
       imagesByUser[imageObj.email].push(imageObj.imageUrl);
     });
-  
+
     // Create a list of image groups for each email
     for (const email in imagesByUser) {
       const imageGroup = imagesByUser[email];
@@ -60,14 +61,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const groupTitle = document.createElement("h3");
       groupTitle.textContent = email;
       groupContainer.appendChild(groupTitle);
-  
+
       imageGroup.forEach((imageUrl) => {
         const imageElement = document.createElement("img");
         imageElement.src = imageUrl;
         imageElement.alt = "Submitted Image";
         groupContainer.appendChild(imageElement);
       });
-  
+
       galleryContainer.appendChild(groupContainer);
     }
   }
@@ -94,13 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const picsumImg = document.getElementById("picsum_img");
     const imageUrl = picsumImg.src;
     const emailValue = email.value.trim();
-  
+
     submittedImages.push({ imageUrl, email: emailValue });
-  
-    // Add email property to the image group
-    const imageGroup = submittedImages.filter((imageObj) => imageObj.email === emailValue);
-    imageGroup.email = emailValue;
-  
+
     updateImageLibrary();
   }
 
@@ -114,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     placeholderImage.src = imageUrl;
   }
 
-  submitButton.addEventListener("click", updateImage);
+  nextImageButton.addEventListener("click", updateImage);
 
   const removeAllButton = document.getElementById("remove_all_btn");
   removeAllButton.addEventListener("click", removeAllImages);
@@ -125,23 +122,3 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
 });
-
-
-//RANDOM PICTURE
-
-document.addEventListener("DOMContentLoaded", function () {
-    const placeholderImage = document.getElementById("picsum_img");
-    const changeImageButton = document.getElementById("change_img");
-  
-    function updateImage() {
-      const seed = Math.floor(Math.random() * 1000); 
-      const width = 200;
-      const height = 300;
-      const imageUrl = `https://picsum.photos/seed/${seed}/${width}/${height}`;
-  
-      placeholderImage.src = imageUrl;
-    }
-  
-    changeImageButton.addEventListener("click", updateImage);
-  })
-

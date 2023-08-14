@@ -3,3 +3,29 @@
         'Partials/base-styling',
         'Main/main';
 
+
+#picsum_img{
+    margin: 0 60px;
+}
+
+button:hover{
+    background-color: rgba(109, 109, 109, 0.1);
+}
+
+.background_container{
+    background-image: url("Images/pict.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100%;
+}
+
+.saved_img,
+.random_picture{
+    background-color: $Darkest_Night;
+    margin: 50px 20px;
+}
+
+.error{
+    margin: 10px 10px 0 10px;
+}

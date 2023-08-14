@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <link rel="icon" type="image/png" sizes="32x32" href="SCSS/Images/favicon-32x32.png"> 
     <link rel="stylesheet" type="text/css" href="SCSS/array.css">
 
     <script src="https://kit.fontawesome.com/0748773ba3.js" crossorigin="anonymous"></script>
@@ -10,6 +11,7 @@
 </head>
 
 <body>
+    <div class="background_container">
     <div class="container">
         <div class="containing">
             <div class="emailPic_container">
@@ -18,11 +20,21 @@
                         <h2>Image Search</h2>
                     </div>
                     <div class="image">
-                        <img id="picsum_img" src="https://picsum.photos/200/300?random=1">
+                        <img id="picsum_img" alt="Random Image" src="https://picsum.photos/200/300?random=1">
                     </div>
                     <div class="img-btn">
                         <button id="change_img" type="submit">Next image</button>
                     </div>
+                    <form id="GET_PIC" method="POST" >
+                        <div class="form_header">
+                            <h2>Enter Email:</h2>
+                        </div>
+                        <div class="input_fields info" id="Email_Address">
+                          <input placeholder="Email address *" type="text" id="email" name="email">
+                        <button type="submit">Submit</button><br>
+                        <div class="error"></div>
+                        </div>
+                    </form>
                 </div>
 
 
@@ -36,7 +48,7 @@
                       </div>
 
 
-                    <form id="GET_PIC" method="POST" >
+                    <!-- <form id="GET_PIC" method="POST" >
                         <div class="form_header">
                             <h2>Enter Email:</h2>
                         </div>
@@ -45,14 +57,15 @@
                         <button type="submit">Submit</button><br>
                         <div class="error"></div>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
-<script src="https://picsum.photos/seed/picsum/200/300" type="text/javascript"></script>
+<!-- <script src="https://picsum.photos/seed/picsum/200/300" type="text/javascript"></script> -->
 <script src="JS/array.js"></script>
 </body>
 
